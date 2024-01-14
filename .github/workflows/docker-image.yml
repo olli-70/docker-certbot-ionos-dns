@@ -8,7 +8,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Build and push image
-         run: |
+        run: |
            docker login --username olli-70 --password ${{ secrets.GH_PAT }} ghcr.io
            docker build . --tag ghcr.io/olli-70/docker-certbot-ionos-dns:latest
            docker push ghcr.io/olli-70/docker-certbot-ionos-dns:latest
