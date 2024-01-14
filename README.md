@@ -1,2 +1,3 @@
 # docker-certbot-ionos-dns
-running certbot scheduled by cron to create/update Let's encrypt certificates using dns challange with ionos 
+Simple container to regularly generate or renew Let's Encrypt certificates via cron with the DNS challange at ionos hosted domains
+

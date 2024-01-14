@@ -1,0 +1,16 @@
+version: "3.4"
+services:
+  letsencrypt:
+    hostname: letsencrypt
+    container_name: letsencrypt
+    image: docker-certbot-ionos-dns:v0.0.1
+    restart: unless-stopped
+    environment:
+      - LE_TIER="stage"
+      - LE_DOM=tes1.example.com,test2.example.com
+      - LE_EMAIL=admin@example.com
+      - LE_SCHED="20 12 * * *"
+    volumes:
+      - /home/ansible/letsencrypt:/etc/letsencrypt
+      - /home/ansible/ionos_secrets:/etc/ionos_secrets
+    
