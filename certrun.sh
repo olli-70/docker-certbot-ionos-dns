@@ -34,7 +34,7 @@ fi
 env | grep -w  LE_EMAIL > /dev/null
 if [ $? -eq 0 ]
 then
-  echo usinge email: $LE_EMAIL
+  echo using email: $LE_EMAIL
 else
   echo "LE_EMAIL missing, exit"
   exit 11
@@ -43,7 +43,7 @@ fi
 env | grep -w  LE_SCHED > /dev/null
 if [ $? -eq 0 ]
 then
-  echo usinge scheduling $LE_SCHED
+  echo using scheduling $LE_SCHED
 else
   $LE_SCHED="0 3 * * *"
   echo using default scheduling $LE_SCHED
@@ -54,7 +54,6 @@ echo "execute certbot"
   --authenticator dns-ionos \
   --dns-ionos-credentials /etc/ionos_secrets \
   --dns-ionos-propagation-seconds 600 \
-  --no-self-upgrade \
   --non-interactive \
   --expand \
   --server $SERV \
