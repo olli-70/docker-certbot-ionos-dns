@@ -61,4 +61,7 @@ echo "execute certbot"
   --email $LE_EMAIL \
   --rsa-key-size 4096 $DOMAINS
 
+chgrp -R 1000 /etc/letsencrypt
+chmod g+rx /etc/letsencrypt
+
 
